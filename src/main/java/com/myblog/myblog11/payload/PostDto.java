@@ -1,18 +1,22 @@
-package com.myblog.myblog11.entity;
-
-import jakarta.persistence.*;
+package com.myblog.myblog11.payload;
 
 
-@Entity
-@Table(name = "post")
 
-public class Post {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+public class PostDto {
+
     private long id;
     private String title;
     private String description;
     private String content;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
@@ -22,8 +26,6 @@ public class Post {
         this.title = title;
     }
 
-
-
     public String getDescription() {
         return description;
     }
@@ -32,23 +34,11 @@ public class Post {
         this.description = description;
     }
 
-
-
     public String getContent() {
         return content;
     }
 
     public void setContent(String content) {
         this.content = content;
-    }
-
-
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 }
